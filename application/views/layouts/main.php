@@ -7,9 +7,20 @@
 	<title>Codeigniter</title>
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 	<script src="<?php echo base_url();?>assets/js/jquery.js"></script>
-     <script src="<?php echo base_url();?>assets/css/bootstrap.min.js"></script>
+	 <script src="<?php echo base_url();?>assets/css/bootstrap.min.js"></script>
+	 <style type="text/css">
+       /* .col-xs-3{
+		  /* background-color: #F0E68C; */
+		  background: linear-gradient( #33ccff 0%, #ff99cc 100%);
+	   } */
+	   .col-xs-9 {
+		   background-color: #FFFAF0;
+	   }
+
+       </style>
+
 </head>
-<body>
+<body style="background-color: #F8F8FF ">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -47,7 +58,7 @@
 
 	<div class="container">
 
-	     <div class="col-xs-3">
+		 <div class="col-xs-3">
 
          <?php $this->load->view('users/login_view'); ?>
 

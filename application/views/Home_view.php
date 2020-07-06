@@ -30,7 +30,7 @@
 
 <H2>Projects</H2>
 
-<table class="table table-hover">
+<table class="table table-hover table-bordered">
   <thead >
 	  <tr>
 			<th>Project Name</th>

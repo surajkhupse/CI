@@ -28,9 +28,9 @@
 </p>
 
 <a class="btn btn-primary pull-right" href="<?php echo base_url();?>index.php/projects/create">Create Project</a>
- 
-<table class="table table-hover">
-  <thead >
+
+<table class="table table-hover table-bordered">
+  <thead>
 	  <tr>
 			<th>Project Name</th>
 			<th>Project Description</th>

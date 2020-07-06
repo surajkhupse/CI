@@ -61,7 +61,7 @@ class projects extends CI_Controller {
 					 
 					 redirect("projects/index");
            }
-
+		   
 		  }
       }
   
