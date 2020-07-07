@@ -14,7 +14,7 @@
 <ul class="list-group">
 
    <h4>Project Action</h4>
-   <li class="list-group-item"><a href="">Create Task</a></li>
+   <li class="list-group-item"><a href="<?php echo base_url();?>index.php/tasks/create/<?php echo $project_data->id; ?>">Create Task</a></li>
    <li class="list-group-item"><a href="<?php echo base_url();?>index.php/projects/edit/<?php echo $project_data->id; ?>">Edit Project</a></li>
    <li class="list-group-item"><a href="<?php echo base_url();?>index.php/projects/delete/<?php echo $project_data->id; ?>">Delete project</a></li>
 

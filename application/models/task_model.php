@@ -1,6 +1,6 @@
 <?php
 
-class Tasks_model extends CI_Model {
+class Task_model extends CI_Model {
   
 
 
@@ -13,7 +13,11 @@ class Tasks_model extends CI_Model {
 
 	}
 	
+     public function create_task($data){
 
+    $query=$this->db->insert('tasks',$data);
+        return $query;
+	 }
 
 
 	
