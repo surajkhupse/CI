@@ -30,7 +30,8 @@ class  Tasks extends CI_Controller{
 				 
 			 "project_id"=> $project_id,
 			 "task_name" => $this->input->post('task_name'),
-            "task_body"=> $this->input->post('task_body')
+			"task_body"=> $this->input->post('task_body'),
+			"due_date" =>$this->input->post('due_date')
 		  );
 
 		  if($this->task_model->create_task($data)){
@@ -45,6 +46,12 @@ class  Tasks extends CI_Controller{
 
 	 }
 	
+	}
+
+
+	public function edit($task_id)
+	{
+		
 	}
 
 

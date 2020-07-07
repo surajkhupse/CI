@@ -1,11 +1,11 @@
-<h2><b>Create Task </b></h2>
+<h2><b>Edit Task </b></h2>
 
-<?php  $attributes = array('id'=>'create_form','class'=>'form_horizontal'); ?>
+<?php  $attributes = array('id'=>'Edit_form','class'=>'form_horizontal'); ?>
 
 
 <?php  echo validation_errors("<p class='bg-danger'>");?>
 
-<?php  echo form_open('tasks/create/'. $this->uri->segment(3).'',$attributes);?>
+<?php  echo form_open('tasks/edit/'. $this->uri->segment(3).'',$attributes);?>
 
 <!--For First name -->
 <div class="form-group">
