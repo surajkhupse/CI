@@ -25,13 +25,15 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="<?php echo base_url(); ?>"><span class="glyphicon glyphicon-dashboard"></span> Codeigniter</a>
-    </div>
+	</div>
+	<?php $uri = $this->uri->segment(2); ?>
     <ul class="nav navbar-nav">
-	  <li class="active"><a href="<?php echo base_url();?>"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+	<li class="<?php if($uri=='home'){ ?>active<?php } ?>">
+	<a href="<?php echo base_url();?>"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 	  
 	  <?php  if($this->session->userdata('logged_in')):   ?>
 
-      <li><a  href="<?php echo base_url();?>index.php/projects"><span class="glyphicon glyphicon-folder-open"></span>  Projects</a></li>
+      <li class="<?php if($uri=='projects'){ ?>active<?php } ?>"><a  href="<?php echo base_url();?>index.php/projects"><span class="glyphicon glyphicon-folder-open"></span>  Projects</a></li>
 	  
 	  <?php endif;?>
 	  <!-- <li><a href="#">link1</a></li> -->

@@ -1,6 +1,6 @@
 <h2><b>Edit Task </b></h2>
 
-<?php  $attributes = array('id'=>'Edit_form','class'=>'form_horizontal'); ?>
+<?php  $attributes = array('id'=>'edit_task_form','class'=>'form_horizontal'); ?>
 
 
 <?php  echo validation_errors("<p class='bg-danger'>");?>

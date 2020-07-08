@@ -16,8 +16,8 @@
 
 				 <div class="task-action">
 				 
-				    <a href="<?php echo base_url('');?>task/edit_task/<?php echo $task->id; ?>">Edit </a>
-					<a href="<?php echo base_url('');?>task/delete_task/<?php echo $task->id; ?>" >Delete</a>
+				    <a href="<?php echo base_url('');?>index.php/tasks/edit/<?php echo $task->id; ?>">Edit </a>
+					<a href="<?php echo base_url('');?>index.php/tasks/delete/<?php echo $task->id; ?>" >Delete</a>
 				 
 				 
 				 </div>
