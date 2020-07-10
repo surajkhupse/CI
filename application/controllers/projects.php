@@ -14,7 +14,8 @@ class projects extends CI_Controller {
 
  public function index(){
 
-      $data['projects']= $this->project_model->get_projects();
+	  $data['projects']= $this->project_model->get_projects();
+	  
 
 		
 		$data['main_view']=  "projects/index";
@@ -23,7 +24,11 @@ class projects extends CI_Controller {
 	
     public function display($project_id){
 
+
+$data['completed_tasks'] = $this->project_model->get_project_tasks($project_id, true);	
+
  $data['project_data']= $this->project_model->get_project($project_id);
+ 
 
   $data['main_view']= "projects/display";
   $this->load->view('layouts/main',$data);

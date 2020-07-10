@@ -7,6 +7,19 @@
 <h3>Description</h3>
 <p> Project Name: <?php  echo "$project_data->project_body";   ?>   </p>
 
+<h3> Task</h3>
+
+     <?php if($completed_tasks): ?>
+
+            <?php foreach($completed_tasks as $task):?>
+
+                <?php  echo $task->task_id; ?>
+
+            <?php endforeach; ?>
+
+       <?php endif; ?>
+		
+		 
 
 </div>
 
@@ -14,9 +27,9 @@
 <ul class="list-group">
 
    <h4>Project Action</h4>
-   <li class="list-group-item"><a href="<?php echo base_url();?>index.php/tasks/create/<?php echo $project_data->id; ?>">Create Task</a></li>
-   <li class="list-group-item"><a href="<?php echo base_url();?>index.php/projects/edit/<?php echo $project_data->id; ?>">Edit Project</a></li>
-   <li class="list-group-item"><a href="<?php echo base_url();?>index.php/projects/delete/<?php echo $project_data->id; ?>">Delete project</a></li>
+   <li class="list-group-item"><a href="<?php echo base_url();?>tasks/create/<?php echo $project_data->id; ?>">Create Task</a></li>
+   <li class="list-group-item"><a href="<?php echo base_url();?>projects/edit/<?php echo $project_data->id; ?>">Edit Project</a></li>
+   <li class="list-group-item"><a href="<?php echo base_url();?>projects/delete/<?php echo $project_data->id; ?>">Delete project</a></li>
 
 
 

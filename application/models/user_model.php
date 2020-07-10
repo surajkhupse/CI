@@ -78,9 +78,7 @@ public function login_user($username,$password)
 	 if(password_verify($password,$db_password))
 	 { 
 		 return $result->row(0)->id;
-
-
-	 }
+     }
 	 else{
               
         return false;

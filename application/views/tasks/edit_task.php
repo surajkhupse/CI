@@ -14,7 +14,8 @@
 <?php  $data=array(
 'class'=>'form-control',
 'name'=>'task_name',
-'placeholder'=>'Enter Task Name'); ?>
+'value'=>$the_task->task_name
+); ?>
 
 <?php  echo form_input($data);?> 
 
@@ -28,6 +29,7 @@
 	  
 	   'class'=>'form-control',
 	   'name'=>'task_body',
+	   'value'=>$the_task->task_body
 );
 ?>
 <?php  echo form_textarea($data);?>
@@ -39,7 +41,8 @@
 	  
 	   'class'=>'form-control',
 	   'name'=>'due_date',
-	   'type'=>'date'
+	   'type'=>'date',
+	   'value'=>$the_task->due_date
 );
 ?>
 
@@ -55,7 +58,7 @@
 $data=array(
 	'class'=>'btn btn-primary',
 	'name'=>'Submit',
-	'value'=>'Create'
+	'value'=>'Update'
 );?>
 
 <?php echo form_submit($data);?>

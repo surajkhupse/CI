@@ -27,6 +27,18 @@
 
 </p>
 
+<p class="bg-success">
+
+<?php if($this->session->flashdata('task_update')):?> 
+
+<?php echo $this->session->flashdata('task_update'); ?>
+
+<?php endif;  ?>
+
+</p>
+
+
+
 <a class="btn btn-primary pull-right" href="<?php echo base_url();?>index.php/projects/create">Create Project</a>
 
 <table class="table table-hover table-bordered">
@@ -40,10 +52,10 @@
 		  <?php foreach($projects as $project): ?>
 		   
 		<tr>	
-		   <?php  echo "<td><a href='". base_url() ."index.php/projects/display/". $project->id ."'>" . $project->project_name . "</a></td>" ;   ?>
+		   <?php  echo "<td><a href='". base_url() ."projects/display/". $project->id ."'>" . $project->project_name . "</a></td>" ;   ?>
 		   <?php  echo "<td>" . $project->project_body . "</td>" ;   ?>
  
-             <td><a class="btn btn-danger" href="<?php echo base_url();?>index.php/projects/delete/<?php echo $project->id?>"><span class="glyphicon glyphicon-remove"></span></a></td>
+             <td><a id="delete"  class="btn btn-danger" href="<?php echo base_url();?>projects/delete/<?php echo $project->id?>"><span class="glyphicon glyphicon-remove"></span></a></td>
 
 		  </tr>
             <?php endforeach; ?>
