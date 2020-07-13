@@ -38,7 +38,7 @@ class  Tasks extends CI_Controller{
 
 			$this->session->set_flashdata('task_create', 'Task has been Create');
 			
-			redirect('tasks/index');
+			redirect("projects/display/". $project_id."");
 			
 			
 		  } 
@@ -85,6 +85,14 @@ class  Tasks extends CI_Controller{
 				} 
 			}
 		
+	}
+
+
+	public function delete($project_id, $task_id){
+
+		$this->task_model->delete_task($task_id);
+		$this->session->set_flashdata('delete_task','Task has been deleted');
+		redirect("projects/display/" . $project_id."");
 	}
 
 

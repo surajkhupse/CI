@@ -2,6 +2,9 @@
 
 <h2><b>Logout</b> </h2>
 
+
+<!-- <img id="log-img"class="glyphicon glyphicon-img" src="<?php echo base_url();?>assets/image/index.png>" alt="Login In"></img> -->
+
 <?php echo form_open('users/logout');?>
 <p>
 

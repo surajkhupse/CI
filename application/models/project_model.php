@@ -43,8 +43,8 @@ public function get_project($id){
 	   $this->db->where('id',$project_id);
 	   $this->db->update('projects', $data);
 	    return true;
+      }
 
-	  }
 	   public function get_project_info($project_id){
 
 
@@ -55,57 +55,100 @@ public function get_project($id){
 		}
 		
 
-		public function get_project_tasks($project_id, $active = true){
-
-		  $this->db->select('
-		  
-						 tasks.task_name,
-						 tasks.task_body,
-						 tasks.id as task_id,
-						 projects.project_name,
-						 projects.project_body,
-		 
-		                ');
-
-		                $this->db->from('tasks');
-						$this->db->join('projects', 'projects.id = tasks.project_id');
-						$this->db->where('tasks.project_id', $project_id);
-							
-						if($active == true){
-
-							$this->db->where('tasks.status', 0);
-						}
-						else{
-
-							$this->db->where('tasks.status', 1);
-						}
-
-						$query = $this->db->get();
-
-                           if($query->num_rows() < 1){
-
-							   return false;
-
-						   }
-
-                       return $query->result();
-
-
-
-
-
-
-
-		}
-
-
-
-
+	
 	   public function delete_project($project_id) {
 		$this->db->where('id',$project_id);
 		$this->db->delete('projects');
 
 	   }
+
+	   //Join a two table
+
+	   public function get_project_tasks($project_id, $active = true){
+
+		$this->db->select('
+		
+					   tasks.task_name,
+					   tasks.task_body,
+					   tasks.id as task_id,
+					   projects.project_name,
+					   projects.project_body
+	                 ');
+
+					  $this->db->from('tasks');
+					  $this->db->join('projects', 'projects.id = tasks.project_id');
+					  $this->db->where('tasks.project_id', $project_id);
+
+		// 			//   $query = $this->db->query('SELECT * FROM tasks');
+		// 			//   $query = $this->db->get();
+		// 			// 	echo $query->num_rows();
+		// 			// 	exit;
+						
+					  
+					  if($active == true){
+
+						  $this->db->where('tasks.status', 0);
+
+					  }
+					  else{
+
+						  $this->db->where('tasks.status', 1);
+					  }
+
+					  $query = $this->db->get();
+
+
+						 if($query->num_rows() < 1){
+
+							 return FALSE;
+
+						 }
+
+
+
+					 return $query->result();
+
+
+					//Join a two table 
+
+					// $this->db->select('*');
+					// $this->db->from('tasks');
+					// $this->db->join('projects', 'projects.id = tasks.project_id');
+					// $this->db->where('tasks.project_id', $project_id);
+					// if($active == true){
+
+					// 					  $this->db->where('tasks.status', 0);
+				
+					// 				  }
+					// 				  else{
+				
+					// 					  $this->db->where('tasks.status', 1);
+					// 				  }
+					// $query = $this->db->get();
+
+					//                           if($query->num_rows() < 1){
+
+					// 						 return FALSE;
+				
+					// 					       }
+					// return $query->result();
+
+
+                      
+
+
+		  }
+
+		  public function delete_project_tasks($project_id){
+
+		  $this->db->where('project_id', $project_id);
+		  $this->db->delete('tasks');
+
+		return true;
+
+
+		  }
+
 
 }
 ?>

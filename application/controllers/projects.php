@@ -106,7 +106,10 @@ $data['completed_tasks'] = $this->project_model->get_project_tasks($project_id, 
 
         public function delete($project_id){
 
+		$this->project_model->delete_project_tasks($project_id);
+
 		 $this->project_model->delete_project($project_id);
+		 
 		 $this->session->set_flashdata('project_deleted','Your project deleted');
 
 		 redirect('projects/index');
