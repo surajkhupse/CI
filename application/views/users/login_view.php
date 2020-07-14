@@ -1,20 +1,19 @@
 <div>
 	
-<?php  if($this->session->userdata('logged_in')):   ?>
+     <?php  if($this->session->userdata('logged_in')):   ?>
 
-<h2><b>Logout</b> </h2>
+        <div class="col-xs-3">
 
-<div class="col-xs-3">
+            <div class="user-pic">
 
-      <div class="user-pic">
-	   
-	  <img class="" src="<?php echo base_url();?>assets/image/index.png"></img>
-
-      </div>
-</div>
-
+	            <!-- <h2><b>Logout</b> </h2> -->
+	             <img class="profile-img" src="<?php echo base_url();?>assets/image/index.png"></img>
+ 
+	       </div>
+      
 
 <?php echo form_open('users/logout');?>
+<!-- 
 <p>
 
 <?php  if($this->session->userdata('username')):?>
@@ -23,7 +22,10 @@
 
 <?php endif;  ?>
 
-</p>
+</p> -->
+
+	  
+
 
 <?php
 
@@ -35,9 +37,11 @@
   );
 ?>
 
+
+
 <?php echo form_submit($data);?>
 <?php  echo  form_close(); ?>
-
+</div>
 <?php  else: ?>
 
 
@@ -81,6 +85,7 @@
 <?php   echo form_password($data);  ?>  
 
 </div>
+<!-- sdviod
 <div class="form-group">
 
 <?php  echo form_label('Conform Password');?>
@@ -95,7 +100,7 @@
 
 );?>
 <?php echo form_password($data); ?>
-</div>
+</div> -->
 
 <div class="form-group">
 

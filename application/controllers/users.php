@@ -113,7 +113,7 @@ public function login()
 {
 	$this->form_validation->set_rules('username','Username','trim|required|min_length[3]');
 	$this->form_validation->set_rules('password','Password','trim|required|min_length[3]');
-	$this->form_validation->set_rules('conform_password','Conform_Password','trim|required|min_length[3]|matches[password]');
+	//$this->form_validation->set_rules('conform_password','Conform_Password','trim|required|min_length[3]|matches[password]');
 	
 	if ($this->form_validation->run() == FALSE) 
 	{
