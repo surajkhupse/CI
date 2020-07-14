@@ -1,9 +1,18 @@
+<div>
+	
 <?php  if($this->session->userdata('logged_in')):   ?>
 
 <h2><b>Logout</b> </h2>
 
+<div class="col-xs-3">
 
-<!-- <img id="log-img"class="glyphicon glyphicon-img" src="<?php echo base_url();?>assets/image/index.png>" alt="Login In"></img> -->
+      <div class="user-pic">
+	   
+	  <img class="" src="<?php echo base_url();?>assets/image/index.png"></img>
+
+      </div>
+</div>
+
 
 <?php echo form_open('users/logout');?>
 <p>
@@ -107,3 +116,4 @@ $data=array(
 <?php  echo form_close();  ?>
 
 <?php endif; ?>
+</div>
