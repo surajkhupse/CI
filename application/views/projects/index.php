@@ -1,5 +1,8 @@
 
-<h1>Projects</h1>
+
+		
+
+
 
 <p class="bg-success">
 
@@ -37,9 +40,17 @@
 
 </p>
 
+<div class="panel panel-primary">
 
+<div class="panel-heading"><H1>Projects</H1></div>
 
-<a class="btn btn-primary pull-right" href="<?php echo base_url();?>index.php/projects/create">Create Project</a>
+<ul class="list-group">
+ 
+<li class="list-group-item"> <a class="btn btn-primary pull-right" href="<?php echo base_url();?>projects/create">Create Project</a> 
+</li>
+
+</ul>
+
 
 <table class="table table-hover table-bordered">
   <thead>
@@ -50,8 +61,12 @@
 	</thead>
 	<tbody>
 		  <?php foreach($projects as $project): ?>
-		   
-		<tr>	
+
+			
+                  
+			
+   
+		<tr>
 		   <?php  echo "<td><a href='". base_url() ."projects/display/". $project->id ."'>" . $project->project_name . "</a></td>" ;   ?>
 		   <?php  echo "<td>" . $project->project_body . "</td>" ;   ?>
  
@@ -63,3 +78,7 @@
 	</tbody>
 
 </table>
+
+</div>
+</div>
+

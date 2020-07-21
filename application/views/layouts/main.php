@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 	<script src="<?php echo base_url();?>assets/js/jquery.js"></script>
 	 <script src="<?php echo base_url();?>assets/css/bootstrap.min.js"></script>
+	 <script src="<?php echo base_url();?>assets/js-webshim/minified/polyfiller.js"></script>
  
      
 
@@ -42,9 +43,10 @@
 	
     <ul class="nav navbar-nav navbar-right">
       <li><a  href="<?php echo base_url();?>users/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-			<li><a href="<?php echo base_url();?>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	  	
+	  <li><a href="<?php echo base_url();?>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 	 </ul>
-	
+	 
 	
 	 <?php  if($this->session->userdata('logged_in')):   ?> 
 
@@ -57,20 +59,23 @@
   </div>
 </nav> 
 
-	<div class="container">
-
+	
+  <div class="container">
+	
 		 <div class="col-xs-3">
 
          <?php $this->load->view('users/login_view'); ?>
 
-        </div>
-
-	    <div class="col-xs-9" id="col-xs-9">
+		</div>
+	 
+ 
+		
+	    <div class="col-xs-9" id="col-xs-12">
 
 	       <?php  $this->load->view($main_view);  ?>
 	
 	     </div>
-
+		 
 
 	</div>
 

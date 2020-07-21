@@ -1,36 +1,72 @@
 <div>
 	
+  
+<p><?php echo $this->session->flashdata('message'); ?> </p> 
+
      <?php  if($this->session->userdata('logged_in')):   ?>
 
         <div class="col-xs-3">
 
             <div class="user-pic">
 
-	            <!-- <h2><b>Logout</b> </h2> -->
-	             <img class="profile-img" src="<?php echo base_url();?>assets/image/index.png"></img>
+			   <!-- <?php if($users->profile_photo){ ?> 
+
+	            <img class="profile-img" src="<?php echo base_url();?>uploads/' .$users->profile_photo'"></img>
+
+			   <?php } else { ?>
+				 
+				<img class="profile-img" src="<?php echo base_url();?>assets/image/index.png"></img> 
+
+			   <?php } ?>  -->
+
+	             <h2><b>Logout</b> </h2>
+
+				 <div class="">
  
-	       </div>
+				 <img class="profile-img" src="<?php echo base_url();?>assets/image/index.png"></img> 
+
+				 </div>
+	             
+          </div>
+    
+	 
+		  <!-- <?php echo form_open('users/upload');?>
+
+		  <?php
+
+            $data= array(
+               'class'=>'btn btn-primary',
+                'id'=>'log-out',
+              'name'=>'Submit',
+                'value'=>'Upload'
+
+            );
+              ?>
+
+
+		    <?php echo form_submit($data);?>
+              <?php  echo  form_close(); ?> -->
+
+				 
+				
       
 
 <?php echo form_open('users/logout');?>
 <!-- 
 <p>
-
 <?php  if($this->session->userdata('username')):?>
-
 <?php   echo "You are logged in as ". $this->session->userdata('username');  ?>
-
 <?php endif;  ?>
 
 </p> -->
 
+
 	  
-
-
 <?php
 
   $data= array(
 	 'class'=>'btn btn-primary',
+	 'id'=>'log-out',
 	 'name'=>'Submit',
 	 'value'=>'Logout'
 
@@ -42,6 +78,10 @@
 <?php echo form_submit($data);?>
 <?php  echo  form_close(); ?>
 </div>
+
+
+
+
 <?php  else: ?>
 
 

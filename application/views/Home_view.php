@@ -28,55 +28,81 @@
 
 <?php  if(isset($projects)): ?>
 
-<H2>Projects</H2>
+<div class="panel panel-primary">
 
-<table class="table table-hover table-bordered">
-  <thead >
-	  <tr>
-			<th>Project Name</th>
-			<th>Project Description</th>
-	  </tr>
-	</thead>
-	<tbody>
+<div class="panel-heading"><H3>Projects</H3></div>
+
+<div class="panel-body">
+
+ <ul class="list-group">
+			
+			
+	  
 		  <?php foreach($projects as $project): ?>
 		   
-		<tr>	
-		   <td><?php  echo  $project->project_name  ;   ?></td>
-		   <td><?php  echo  $project->project_body  ;   ?></td>
-		   <td><a href="<?php echo base_url();?>projects/display/<?php echo $project->id; ?>">View</a></td>
- 
-        </tr>
-            <?php endforeach; ?>
-
-	</tbody>
-
-</table>
-		  <?php endif; ?>
-
-
-     <?php  if(isset($tasks)) :?>
-		  <H2> Project Tasks</H2>
-
-<table class="table table-hover table-bordered">
-  <thead >
-	  <tr>
-			<th>Task Name</th>
-			<th>Task Description</th>
-	  </tr>
-	</thead>
-	<tbody>
-		  <?php foreach($tasks as $task): ?>
+		<li class="list-group-item"><a href="<?php echo base_url();?>projects/display/<?php echo $project->id; ?>">	
+		   <?php  echo  $project->project_name  ;   ?>
 		   
-		<tr>	
-		   <td><?php  echo  $task->task_name  ;   ?></td>
-		   <td><?php  echo  $task->task_body  ;   ?></td>
-		   <td><a href="<?php echo base_url();?>tasks/display/<?php echo $task->id; ?>">View</a></td>
+		  </a>
+
+		  </li>
  
-        </tr>
+        
             <?php endforeach; ?>
 
-	</tbody>
 
-</table>
+		  <?php endif; ?>
+		  </ul>
+
+		  </div>
+		  </div>
+		  
+		  
+
+
+	 <?php  if(isset($tasks)) :?>
+ 
+		<div class="panel panel-primary">
+
+          <div class="panel-heading"><H3>Project Tasks</H3></div>
+
+            
+ <table class="table table-hover table-bordered table-responsive">
+
+       
+  <thead class="thead-light">
+	        <th><h4>Project Name</h4></th>
+			<th><h4>Task Name</h4></th>
+	         <!-- <th><h4>Task Description</h4></th> -->
+
+	 </thead>
+	 
+	 <tbody>
+	 
+
+		  <?php foreach($tasks as $task): ?>
+
+			<tr>
+		   
+			<td><a href="<?php echo base_url();?>tasks/display/<?php echo $task->id; ?>"><?php  echo  $task->project_name  ;   ?></a> </td>
+		    <td><b><?php  echo  $task->task_name  ;   ?> </b></td>
+		   <!-- <td><?php  echo  $task->task_body  ;   ?> </td> -->
+		   
+ 
+       
+            <?php endforeach; ?>
+		  </tr>
+
 		  <?php endif; ?>
 
+		  </tbody>
+
+		  </table>
+
+		  
+
+</div>
+</div>
+</div>
+
+		  

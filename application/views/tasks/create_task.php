@@ -60,7 +60,17 @@ $data=array(
 
 <?php echo form_submit($data);?>
 
+
 </div>
 
+
+
 <?php  echo form_close();  ?>
+
+<script>
+
+webshim.setoption('forms-ext', {types: 'date'});
+webshim.pollyfill('forms forms-ext');
+
+</script>
 

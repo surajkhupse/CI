@@ -1,5 +1,5 @@
 
-<div class="col-xs-9">
+<div class="col-xs-12">
 
  <p class="bg-success"> 
 
@@ -16,24 +16,51 @@
 <?php endif;  ?>
 
  </p>
+ 
+ <div class="panel panel-primary">
 
+<div class="panel-heading"><h1> Project Name: <?php  echo "$project_data->project_name";   ?>   </h1> </div>
 
-<h1> Project Name: <?php  echo "$project_data->project_name";   ?>   </h1>
+<ul class="list-group">
 
+ <li class="list-group-item">
 <p>Date Created <?php  echo "$project_data->date_created";     ?>   </p>
+ 
 
 <h3>Description</h3>
 
 <p> Project Name: <?php  echo "$project_data->project_body";   ?>   </p>
  
+
+
+ <a class='btn btn-primary' href="<?php echo base_url();?>tasks/create/<?php echo $project_data->id; ?>/<?php echo $project_data->id; ?>">Create Task</a>
+
+<a class="btn btn-primary" href="<?php echo base_url();?>projects/edit/<?php echo $project_data->id; ?>">Edit Project</a>
+
+<a  class="btn btn-danger" href="<?php echo base_url();?>projects/delete/<?php echo $project_data->id; ?>">Delete</a>
+
+</li>
+ </ul>
+
+
+
+ </div>
+
+
+
  
  <!-- Task Not Complete -->
-        <h3> Active Tasks</h3>
-		  <ul>
+
+ <div class="panel panel-warning">
+
+
+
+ <div class="panel-heading">   <h3> Active Tasks</h3> </div>
+		  <ul class="list-group">
      <?php if($not_completed_tasks): ?>
 
             <?php foreach($not_completed_tasks as $task):?>
-				<li>
+				<li class="list-group-item">
 			<a href="<?php echo base_url();?>tasks/display/<?php echo $task->task_id; ?>">
 
                 <?php  echo $task->task_name; ?>
@@ -42,23 +69,28 @@
             <?php endforeach; ?>
 			<?php else : ?>
 
-			<p> You have no active task</p>
+			
+			<li class="list-group-item">	<p> You have no active task</p> </li>
 
        <?php endif; ?>
 
 	   </ul>
 
-
+			</div>
 
 
 
  <!-- Complete task sections -->
-<h3> Completed Task</h3>
-<ul>
+
+ <div class="panel panel-success">
+
+
+<div class="panel panel-heading"><h3> Completed Task</h3>  </div>
+<ul class="list-group">
      <?php if($completed_tasks): ?>
 
             <?php foreach($completed_tasks as $task):?>
-				<li>
+				<li class="list-group-item">
 			<a href="<?php echo base_url();?>tasks/display/<?php echo $task->task_id; ?>">
 
                 <?php  echo $task->task_name; ?>
@@ -67,7 +99,7 @@
             <?php endforeach; ?>
 			<?php else : ?>
 
-			<p> You have not tasks  pending</p>
+			<li class="list-group-item"><p> You have not tasks  pending</p> </li>
 
        <?php endif; ?>
 
@@ -76,16 +108,6 @@
 		 
 
 </div>
-
-<div class="col-xs-3 pull-right">
-<ul class="list-group">
-
-   <h4>Project Action</h4>
-   <li class="list-group-item"><a href="<?php echo base_url();?>tasks/create/<?php echo $project_data->id; ?>/<?php echo $project_data->id; ?>">Create Task</a></li>
-   <li class="list-group-item"><a href="<?php echo base_url();?>projects/edit/<?php echo $project_data->id; ?>">Edit Project</a></li>
-   <li class="list-group-item"><a href="<?php echo base_url();?>projects/delete/<?php echo $project_data->id; ?>">Delete project</a></li>
-
-
-
-</ul>
 </div>
+
+

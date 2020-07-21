@@ -167,6 +167,65 @@ public function login()
                             redirect('home/index');
 
 
-                  }
-}
+				  }
+				  
+		//  Upload a file  and add a profile image
+		
+
+		//  public function upload(){
+			
+		// 	$this->session->userdata('logged_in');
+
+		// 	$config['upload_path']          = './uploads/';
+		// 	$config['allowed_types']        = 'gif|jpg|png';
+		// 	$config['max_size']             = 500;
+		// 	// $config['max_width']            = 1024;
+		// 	// $config['max_height']           = 768;
+
+		// 	$this->load->library('upload', $config);
+
+		// 	$data['error'] = "";
+
+		// 	        if ( ! $this->upload->do_upload('userfile'))
+		// 	        {
+        //             if(isset($_FILES['userfile'])){
+
+		// 			     $data['error'] = $this->upload->display_errors();	 
+		// 			  }
+				   
+		// 			  $data['title'] = "File Upload";
+
+		// 	             $this->load->view('users/upload', $data);
+		//           	}
+        //               else
+		// 	               {
+
+		// 					 $user_id = $this->session->userdata('id');
+
+        //                      $uploaddata = $this->upload->data();
+
+        //                      $filename = $uploaddata['file_name'];
+
+        //                      $userdata = array(
+        //                                            'profile_photo' => $filename
+		// 	                                  );
+
+		// 			        $this->user_model->update_file($user_id , $userdata);
+
+        //                     $this->session->set_flashdata('message', 'Update sucessfuly');
+
+        //                     redirect('home/index');
+
+		// 		}
+	    //     }
+
+
+			 
+		}
+
+
+
+	
+
+
 ?>

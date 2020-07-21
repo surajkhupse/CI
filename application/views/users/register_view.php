@@ -20,7 +20,10 @@
 <?php  $data=array(
 'class'=>'form-control',
 'name'=>'first_name',
-'placeholder'=>'Enter First Name'); ?>
+'placeholder'=>'Enter First Name', 
+'value'=> set_value('first_name')
+
+); ?>
 
 <?php  echo form_input($data);?>
 

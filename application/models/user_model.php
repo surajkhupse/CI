@@ -109,5 +109,21 @@ $data= array(
 	return $insert_data;
 
   }
-} 
 
+
+
+         public function update_file($user_id, $userdata){
+			  
+
+			$this->db->where('id', $user_id);
+			$this->db->update('users', $userdata); 
+
+
+
+		 }	
+		 
+		 
+
+		
+		
+		}
